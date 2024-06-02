@@ -1,0 +1,14 @@
+<% if (data.pokemonName) { %>
+    <% if(data.isPokemon === true){ %>
+        <h2 id="pokemon_lookup">Has Ash battled against <%= data.pokemonName %>?</h2>
+        <div class="image-container">
+            <img src="<%= data.pokemonImage %>" class="pokemon-image pokeball-border" alt="<%= data.pokemonName %>">
+        </div>
+        <p class="ai-answer"><%= data.chatResponse %></p>
+
+    <% } else { %>
+        <h2 id="pokemon_lookup"> Could not find that Pokémon, please try again</h2>
+        <div>
+            <img src="/images/unown-question.png" class="unown pokeball-border" alt="<%= data.pokemonName %>">
+        </div>
+    <% } %>

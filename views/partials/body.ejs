@@ -1,0 +1,106 @@
+<section class="section_home">
+    <div class="section_container">
+        <% if (locals.pokemonName) { %>
+            <% if(locals.isPokemon === true){ %>
+                <h2 id="pokemon_lookup">Has Ash battled against <%= locals.pokemonName %>?</h2>
+                <div class="image-container">
+                    <img src="<%= locals.pokemonImage %>" class="pokemon-image pokeball-border" alt="<%= locals.pokemonName %>">
+                </div>
+                <p class="ai-answer"><%= locals.chatResponse %></p>
+
+            <% } else { %>
+                <h2 id="pokemon_lookup"> Could not find that Pokémon, please try again</h2>
+                <div>
+                    <img src="/images/unown-question.png" class="unown pokeball-border" alt="<%= locals.pokemonName %>">
+                </div>
+            <% } %>
+        <% } else { %>
+            <h2 id="pokemon_lookup">Enter a Pokémon's name to check if Ash has battled it!</h2>
+            <!-- <div class="pokeball middle-clipped"></div> -->
+
+            <!-- <div class="pokeball"></div> -->
+
+            <div id="pokeballs">
+                <img id="ash_battle_notifier_icon" src="/images/check-circle-fill.svg" class="notifier_icon">
+                <div class="pokeball top-clipped position-relative"></div>
+                <div id="pokemon_image_result" class="pokeball-sizing"></div>   
+                <div id="pokeball-bottom" class="position-relative slide-down-height">
+                
+                    <div class="pokeball middle-clipped position-absolute slide-down"></div>
+                    <div class="pokeball bottom-clipped position-absolute slide-down"></div>
+                </div>
+            </div>
+            <div id="pokemon_ai_result"></div>
+                <svg width="0" height="0" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Clipping path for the red section -->
+                    <clipPath id="red-clip">
+                        <path d="M96,0 a96,96 0 0,1 96,96 H0 a96,96 0 0,1 96,-96" fill="red" />
+                        <!-- <circle cx="96" cy="96" r="16" fill="white" /> -->
+                        <circle cx="96" cy="96" r="20" fill="white" />
+                    </clipPath>
+                    
+                    <!-- Clipping path for the black button -->
+                    <clipPath id="button-clip">
+                    <circle cx="96" cy="96" r="20" fill="black" />
+                    </clipPath>
+                    
+                    <!-- Clipping path for the white section -->
+                    <clipPath id="white-clip">
+                        <!-- <path d="M0,96 H192 a96,96 0 0,1 -96,96 Z M80,96 a16,16 0 0,1 32,0 Z" fill="none" /> -->
+                        <path d="M96,192 a96,96 0 0,1 -96,-96 H192 a96,96 0 0,1 -96,96 M96,96" fill="none" />
+                        <!-- Circular cut-out for the button (20-pixel radius) -->
+                        <circle cx="96" cy="96" r="20" fill="none" />
+
+                    </clipPath>
+                    
+                </svg>
+                <svg width="0" height="0" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Clipping path for the red section -->
+                    <clipPath id="red-clip-medium">
+                        <path d="M64,0 a64,64 0 0,1 64,64 H0 a64,64 0 0,1 64,-64" fill="red" />
+                        <circle cx="64" cy="64" r="15" fill="white" />
+                    </clipPath>
+                    
+                    <!-- Clipping path for the black button -->
+                    <clipPath id="button-clip-medium">
+                        <circle cx="64" cy="64" r="15" fill="black" />
+                    </clipPath>
+                    
+                    <!-- Clipping path for the white section -->
+                    <clipPath id="white-clip-medium">
+                        <path d="M64,128 a64,64 0 0,1 -64,-64 H128 a64,64 0 0,1 -64,64 M64,64" fill="none" />
+                        <!-- Circular cut-out for the button (15-pixel radius) -->
+                        <circle cx="64" cy="64" r="15" fill="none" />
+                    </clipPath>
+                </svg>
+                <svg width="0" height="0" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Clipping path for the red section -->
+                    <clipPath id="red-clip-small">
+                        <path d="M48,0 a48,48 0 0,1 48,48 H0 a48,48 0 0,1 48,-48" fill="red" />
+                        <circle cx="48" cy="48" r="10" fill="white" />
+                    </clipPath>
+                
+                    <!-- Clipping path for the black button -->
+                    <clipPath id="button-clip-small">
+                        <circle cx="48" cy="48" r="10" fill="black" />
+                    </clipPath>
+                
+                    <!-- Clipping path for the white section -->
+                    <clipPath id="white-clip-small">
+                        <path d="M48,96 a48,48 0 0,1 -48,-48 H96 a48,48 0 0,1 -48,48" fill="none" />
+                        <circle cx="48" cy="48" r="10" fill="none" />
+                    </clipPath>
+                </svg>
+                
+
+              
+
+        <% } %>
+            <form id="pokemon_search_form" class="search_container" action="/search" method="POST" autocomplete="off">
+                <input type="text" id="search" placeholder="Search for a Pokemon" name="pokemon" autofocus required>
+                <div class="relative-container"><div id="suggestions"></div></div>
+                <input id="search_button" type="submit" value="Search"></input>
+            </form>
+
+    </div>
+</section>
