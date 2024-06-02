@@ -8,9 +8,7 @@ This project provides an API to search for Pokémon and check if Ash Ketchum has
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Endpoints](#api-endpoints)
 - [Environment Variables](#environment-variables)
-- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -21,7 +19,7 @@ This project provides an API to search for Pokémon and check if Ash Ketchum has
 - Uses OpenAI's ChatGPT to answer if Ash has battled the specified Pokémon.
 - Autocompletes Pokémon names for search suggestions.
 - Provides details to Ash Battle History
-- Site is rezisable
+- Site is resizable to adjust to different forms of media
   
 
 ## Prerequisites
@@ -52,7 +50,11 @@ Start the server:
 
   ```bash
   npm start
-
+```
+## Environment-Variables
+Create a .env file in the root directory with the following content:
+```
+  OPENAI_API_KEY=your-openai-api-key
 
 ```
 ## Contributing
