@@ -2,6 +2,9 @@
 
 This project provides an API to search for Pokémon and check if Ash Ketchum has battled them in the Pokémon series. The project uses Express.js, the PokéAPI, and OpenAI's ChatGPT for fetching Pokémon data and answering user queries.
 
+Checkout the live session here: 
+ashbattles.com
+
 ## Table of Contents
 
 - [Features](#features)
